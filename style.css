@@ -1798,3 +1798,34 @@ footer {
     color: var(--text-primary);
     margin: 1.5em 0 0.8em;
 }
+
+/* Принудительно фиксируем стандартный курсор для всех элементов */
+* {
+    cursor: auto !important;
+}
+
+/* Для интерактивных элементов оставляем pointer, но убираем любые другие изменения курсора */
+a, button, input[type="submit"], input[type="button"], .btn, 
+.cta-button, .header-button, .slider-prev, .slider-next,
+.modal-close, .form-button, .cookie-accept-btn, .master-fly-btn button,
+.cta-button-large, .nav-link, .legal-link, .footer-contact,
+.logo, [role="button"] {
+    cursor: pointer !important;
+}
+
+/* Убираем все специальные курсоры */
+.artboard, .artboard:active, [class*="grab"], [class*="grabbing"] {
+    cursor: auto !important;
+}
+
+/* Полностью отключаем любые трансформации курсора из JS */
+.floating-image {
+    pointer-events: auto !important;
+    cursor: auto !important;
+}
+
+/* Убираем все pointer-events: none которые могут влиять */
+.bg-overlay {
+    pointer-events: none; /* Это оставляем, он не влияет на курсор */
+}
+
